@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&family=Oswald:wght@300&family=Poppins:wght@400;500;600&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap');
+
+:root {
+
+  /* ==============Color============ */
+  --body-clr: #efefef;
+
+  /* ==========font-family=========== */
+  --body-font: 'Poppins', sans-serif;
+  --item-font: 'Raleway', sans-serif;
+  --robo-font: 'Roboto', sans-serif;
+
+  /* ==============font-size============== */
+  /* .5rem = 8px | 1rem = 16px */
+  --logo-font-size: 4rem;
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+  /* ===========font-weigh=============== */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /* ==========margin-bottom============ */
+  /* .5rem = 8px | 1rem = 16px */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /* ======z-index========== */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* ============Base=============== */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+textarea {
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+
+body {
+  background-color: var(--body-clr);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =================Reuseable CSS classes============== */
+/* section */
+.logo {
+  font-size: var(--logo-font-size);
+  color: var(--body-clr);
+  line-height: 3rem;
+  margin-bottom: var(--mb-1);
+}
+
+.logoSubText {
+  font-size: var(--normal-font-size);
+  color: var(--body-clr);
+  margin-bottom: var(--mb-1);
+}
+
+.brandLogo {
+  font-size: var(--mb-1-5);
+}
+
+.name {
+  font-family: var(--robo-font);
+  margin: var(--mb-1) 0px;
+  font-size: var(--small-font-size);
+  /* font-weight: bold; */
+}
+
+.itemDetail .name{
+  font-weight: bolder;
+}
+
+.price {
+  font-family: var(--robo-font);
+  margin: var(--mb-1) 0px;
+}
+
+.payment {
+  font-family: var(--robo-font);
+  margin-bottom: var(--mb-1);
+  font-size: var(--small-font-size);
+}
+
+.code {
+  font-family: var(--item-font);
+  margin-bottom: var(--mb-1);
+}
+
+.colorContainer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--mb-0-5);
+}
+
+.itemDetail .colorContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+.colorDetailContainer{
+  display: flex;
+  gap: 5px;
+}
+
+.colorType {
+  width: 15px;
+  height: 15px;
+  background-color: lightcoral;
+  border-radius: 50%;
+}
+
+.colorBox {
+  padding: 1px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.colorBox:hover {
+  border: 1px solid black;
+}
+
+.colorBox.active {
+  border: 1px solid black;
+}
+
+.itemDetail .colorContainer {
+  border-bottom: 1px solid gainsboro;
+  border-top: 1px solid gainsboro;
+  padding: var(--mb-1-5) 0px;
+  justify-content: start;
+  font-family: var(--item-font);
+}
+
+/* .itemDetail .colorBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+} */
+
+.itemDetail .detailText {
+  margin-bottom: var(--mb-1-5);
+}
+
+.itemDetail .size {
+  font-family: var(--item-font);
+  border-bottom: 1px solid gainsboro;
+  padding: var(--mb-1-5) 0px;
+}
+
+.productDetails {
+  padding: var(--mb-1-5) 0px;
+}
+
+.detailList {
+  font-family: var(--item-font);
+  font-size: var(--small-font-size);
+  display: flex;
+  gap: 50px;
+}
+
+.detailList ul {
+  list-style: disc;
+}
+
+.detailList ul li{
+  margin: var(--mb-0-5) 0px;
+}
+
+/* ==============Layout================= */
+.container {
+  padding: 1rem 2rem;
+}
+
+.subContainer {
+  border-bottom: 1px solid gray;
+  background-color: var(--body-clr);
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+}
+
+.itemContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.itemBox {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 1px solid gainsboro;
+}
+
+.itemBox:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* nuka carousel */
+.slider-control-bottomcenter {
+  display: none;
+}
+
+.slider-control-centerright button {
+  visibility: hidden;
+}
+
+.slider-control-centerright button:after {
+  content: '>';
+  visibility: visible;
+  border-radius: 50%;
+  background-color: gray;
+  color: gainsboro;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-control-centerleft button {
+  visibility: hidden;
+}
+
+.slider-control-centerleft button:after {
+  content: '<';
+  visibility: visible;
+  border-radius: 50%;
+  background-color: gray;
+  color: gainsboro;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemDetail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 200px;
+  padding: 0px 200px;
+}
+
+.itemDetail .imgBox {
+  width: 350px;
+  height: 450px;
+  margin-left: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 1px solid gainsboro;
+}
+
+.itemDetail .imgBox:hover{
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ===============Buttons=============== */
+button {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  transition: 0.3s;
+}
+
+/* Responsive Typography */
+
+@media screen and (max-width: 992px) {
+  :root {
+    --logo-font-size: 3rem;
+    --big-font-size: 2.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+
+  .logo {
+    margin-bottom: var(--mb-0-5);
+  }
+
+  .container {
+    padding: 1rem 1.3rem;
+  }
+}
+
+/* =======BreakPoints============= */
+/* for large devices */
+
+@media screen and (max-width: 1505px) {
+  .itemContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .react-multi-carousel-list {
+    width: 470px !important;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+  .itemDetail {
+    gap: 100px;
+  }
+}
+
+/* for medium devices */
+@media screen and (max-width: 788px) {
+  .itemContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 688px) {
+  .itemDetail {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+    gap: 20px;
+  }
+
+  .itemDetail .imgBox {
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --logo-font-size: 2rem;
+    --big-font-size: 2rem;
+    --h1-font-size: 1rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+
+  .logo {
+    margin-bottom: var(--mb-0-25);
+  }
+
+  .itemContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+/* for small devices */
+@media screen and (max-width:350px) {}
+
+
+
+/* .colorType */
+/* white : "#ffffff"
+brown : "#99582a"
+black : "#000000"
+"darkChololate" : "#432818"
+"lightPink" : "#ffc2d1"
+"lightBlue" : "#bde0fe" */
+/* "oat"  : "#e3d5ca" */
+/* "makeUpPink" : "#ffd8be" */
+/* "silver" : "#C0C0C0" */
+/* "jean" : #425d8c */
+/* weakBlue : "#8ecae6" */
+/* stateBlue : "#83c5be */
+/* cream : "#fffee0" */
+/* ivory : "#fefae0" */
+/* purple : "#9381ff" */
+/* beige  : "#c6ac8f" */
+/* burgundy  : "#370617" */
+/* chocolate : "#d68c45" */
+/* lilac : "#C8A2C8" */
+/* orange : "#d68c45" */
+/* blue : "#0fa3b1"*/
+/* green : "#81b29a" */
+/* multi : "#f5ebe0" */
+/* darkBrown : "#432818" */
+/* red : "#780000" */
+/* sand : "#d9c49d" */
+/* taupe : "#bba393" */
+/* tan : "#EFDECD" */
